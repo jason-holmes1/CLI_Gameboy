@@ -92,8 +92,8 @@ class ConnectFour:
             print("Invalid input. Try again.")
             self.play_again()
             
- #? This is the main game loop. It prints the board, asks the player for a column, 
-#? makes a move, checks for a winner, checks if the board is full, and then asks if the players want to play again
+    #? This is the main game loop. It prints the board, asks the player for a column, 
+    #? makes a move, checks for a winner, checks if the board is full, and then asks if the players want to play again
     def play_game(self):
 
         while True: #? This loop will continue until the game is over, which case, the play_again() method will be called
