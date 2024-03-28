@@ -85,9 +85,12 @@ class ConnectFour:
         if play_again.lower() == 'yes':
             self.reset_game()
             self.start_game()
-        else:
+        elif play_again.lower() == 'no':
             print("Thank you for playing!")
             exit()
+        else:
+            print("Invalid input. Try again.")
+            self.play_again()
             
  #? This is the main game loop. It prints the board, asks the player for a column, 
 #? makes a move, checks for a winner, checks if the board is full, and then asks if the players want to play again
