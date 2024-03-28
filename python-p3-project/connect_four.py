@@ -96,8 +96,15 @@ class ConnectFour:
         while True: #? This loop will continue until the game is over, which case, the play_again() method will be called
             self.print_board()
             print(f"It's {self.current_player.name}'s({self.current_player.symbol}) turn.")
-            col = int(input("Enter the column to place your piece: "))
-            if not 0 <= col < self.col or not self.make_move(col): #? Checks if the column is valid and if the move was successful
+            try:
+                col = int(input("Enter the column to place your piece: "))
+            except ValueError:
+                print("Invalid move. Try again.")
+                continue
+            if type(col) == str:
+                print("Invalid move. Try again.")
+                continue
+            if not 0 <= col < self.col or not type(col)== int or not self.make_move(col): #? Checks if the column is valid and if the move was successful
                 print("Invalid move. Try again.")
                 continue #? If the move was not successful, the loop will continue
             if self.check_winner(): #? Checks if there is a winner
